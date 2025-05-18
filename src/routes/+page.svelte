@@ -1,8 +1,7 @@
 <script lang="ts">
   import { periodicTable } from "$lib/periodic";
-  let phrase: string = "This is a testing phrase.";
-  let periodic: string =
-    "indium tellurium rhenium sulfur titanium nitrogen (gallium - (arsenic - sulfur)) (lithium - iodine) yttrium   (europium - uranium) nobelium uranium (gallium - (arsenic - sulfur)) hydrogen ,   thorium iodine sulfur   tungsten oxygen (rubidium - boron) potassium sulfur ! ";
+  let phrase: string = "";
+  let periodic: string = "";
   let elmName: string = "";
   let elmSymbol: string = "";
 
@@ -12,7 +11,7 @@
   }
   function phraseToPeriodic(phrase: string) {
     if (phrase == "") {
-      return "no phrase entered";
+      return "No phrase entered";
     }
     const cleaned = phrase.toLowerCase();
     console.log(cleaned);
@@ -48,7 +47,7 @@
 
   function periodicToPhrase(periodic: string) {
     if (periodic.trim() === "") {
-      return "no elements entered";
+      return "No elements entered";
     }
 
     let cleaned = periodic.replace(/\b[a-z]+\b/gi, (match) => {
@@ -178,12 +177,12 @@
   <div class="flex flex-col gap-8 overflow-y-scroll">
     <div class="w-full flex flex-col justify-start gap-3">
       <p class="font-medium">Convert a phrase to elements</p>
-      <input type="text" bind:value={phrase} placeholder="To encode" />
+      <input type="text" bind:value={phrase} placeholder="The phrase to encode" />
       <textarea readonly>{phraseToPeriodic(phrase)}</textarea>
     </div>
     <div class="w-full flex flex-col justify-start gap-3">
       <p class="font-medium">Convert elements to a phrase</p>
-      <input type="text" bind:value={periodic} placeholder="To decode" />
+      <input type="text" bind:value={periodic} placeholder="The elements to decode" />
       <textarea readonly>{periodicToPhrase(periodic)}</textarea>
     </div>
     <!--<div class="w-full flex flex-col justify-start gap-3">
