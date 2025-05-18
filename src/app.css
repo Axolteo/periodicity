@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-bg: #121019;
+  --color-secondary-bg: #1f1b2b;
+
+  --color-secondary-text: #cfcfcf;
+}
+body {
+  @apply text-white bg-primary-bg w-screen h-screen top-0 left-0 fixed;
+}
+
+*:not(#answer) {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+#controls {
+  @apply w-100 flex flex-col gap-8 overflow-y-scroll;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+input {
+  @apply h-8 rounded-md outline-none bg-secondary-bg border-none pl-2;
+}
+
+textarea {
+  @apply outline-none rounded-md bg-secondary-bg border-none p-2 h-24 align-top resize-none text-secondary-text;
+}
+
+h1 {
+  @apply text-2xl w-fit text-transparent bg-clip-text font-bold bg-gradient-to-tr from-cyan-500 to-violet-500;
+}
+
+#github {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  width: 24px;
+  height: 24px;
+
+  a {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    z-index: 50;
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+    pointer-events: none;
+  }
+}
