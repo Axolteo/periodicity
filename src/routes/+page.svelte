@@ -202,5 +202,5 @@
   class="lg:visible invisible w-[50vw] h-screen absolute top-0 right-0 flex justify-center items-center
 "
 >
-  <img src="logo.svg" width="480px" height="480px" />
+  <img src="logo.svg" width="480px" height="480px" alt="logo" />
 </div>

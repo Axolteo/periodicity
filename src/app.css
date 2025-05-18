@@ -10,11 +10,16 @@ body {
   @apply text-white bg-primary-bg w-screen h-screen top-0 left-0 fixed;
 }
 
-*:not(#answer) {
+*:not(textarea) {
   user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+}
+
+textarea {
+  user-select: text;
+  -webkit-user-select: text; /* iOS Safari */
 }
 
 #controls {
